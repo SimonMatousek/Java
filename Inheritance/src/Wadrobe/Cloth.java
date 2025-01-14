@@ -1,98 +1,92 @@
 package Wadrobe;
 
-import java.util.Objects;
-
 public class Cloth {
-    private String type;
     private String color;
-    private int condititon;
+    private int condition;
+    private String type;
     private int daysWorn;
+    private int initialCondition;
 
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
+    public Cloth(String color, int condition, String type) {
+        this.color = color;
+        this.condition = condition;
+        this.initialCondition = condition;
         this.type = type;
     }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
+    public Cloth(String color, String type){
+        if (type.equals("overwear")) {
+            this.condition = 50;
+        } else {
+            this.condition = 100;
+        }
         this.color = color;
-    }
-
-    public int getCondititon() {
-        return condititon;
-    }
-
-    public void setCondititon(int condititon) {
-        this.condititon = condititon;
-    }
-
-    public int getDaysWorn() {
-        return daysWorn;
-    }
-
-    public void setDaysWorn(int daysWorn) {
-        this.daysWorn = daysWorn;
-    }
-    public Cloth(String type, String color, int condititon) {
-        setType(type);
-        setColor(color);
-        setCondititon(condititon);
-        setDaysWorn(0);
-    }
-    public boolean needsToBeWashed() {
-        boolean washing = false;
-        if (Objects.equals(getType(), "Overwear")) {
-            if (getDaysWorn() > 5) {
-                System.out.println("Your Overwear needs to be washed");
-                washing = true;
-            } else  {
-                System.out.println("Your Overwear is still clean");
-            }
-        } else if(Objects.equals(getType(), "Underwear")) {
-            if (getDaysWorn() > 1) {
-                System.out.println("Your Underwear needs to be washed");
-                washing = true;
-            } else {
-                System.out.println("Your Underwear ist still clean");
-            }
-        }
-        return washing;
-    }
-    public void needsToBeRepaired() {
-        if (Objects.equals(getType(), "Overwear")) {
-            if (getCondititon() < 1 && getCondititon() > 5) {
-                System.out.println("Your Overwear needs to be repaired");
-            } else  {
-                System.out.println("Your Overwear is still ok");
-            }
-        } else if(Objects.equals(getType(), "Underwear")) {
-            if (getCondititon() == 0) {
-                System.out.println("Your Underwear needs to be repaired but it is not possible");
-            } else {
-                System.out.println("Your Underwear ist still fine");
-            }
-        }
+        this.initialCondition = this.condition;
+        this.type = type;
     }
     public void wear() {
-        try { if (!needsToBeWashed()) {
-            setDaysWorn(getDaysWorn() + 1);
+        if (this.type.equals("overwear")) {
+            if (this.daysWorn >= 5) {
+                System.out.println("Needs to be washed");
+            } else {
+                this.daysWorn++;
+            }
+        } else {
+            if (this.daysWorn >= 1) {
+                System.out.println("Needs to be washed");
+            } else {
+                this.daysWorn++;
+            }
         }
-        } catch (Exception e) {
-                System.out.println("You must wash your clothes");
-        }
+    }
 
-    }
     public void repair() {
-        setCondititon(condititon);
+        if (this.type.equals("overwear")) {
+            this.condition = this.initialCondition;
+        } else {
+            System.out.println("Underwear cannot be repaired");
+        }
     }
-    public void getInfo() {
-        System.out.println(getColor() + getType() + " worn for " + getDaysWorn() + " days, has " + getCondititon() + " wash cycles left");
+
+    public void wash() {
+        this.daysWorn = 0;
+        this.condition--;
+        if (this.condition < 0) {
+            this.condition = 0;
+        }
+    }
+
+    public boolean needsToBeWashed() {
+        if (this.type.equals("overwear")) {
+            if (this.daysWorn >= 5) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            if (this.daysWorn >= 1) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
+    public boolean needsToBeRepaired() {
+        if (this.type.equals("overwear")) {
+            if (this.condition < 6) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
+
+    public String getInfo() {
+        return this.color + " " + this.type + " worn for " + this.daysWorn + " days, has " + this.condition + " wash cycles left.";
+    }
+
+    public int getCondition() {
+        return condition;
     }
 }

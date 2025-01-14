@@ -15,8 +15,8 @@ public class Blog {
         }
     }
     public void update(int toUpdate, BlogPost blogPost) {
-        for (BlogPost blogPostto : this.listOfBlogPosts) {
-            if (this.listOfBlogPosts.get(toUpdate) == blogPostto) {
+        for (BlogPost blogPosttemp : this.listOfBlogPosts) {
+            if (this.listOfBlogPosts.get(toUpdate) == blogPosttemp) {
                 this.listOfBlogPosts.set(toUpdate, blogPost);
             }
         }

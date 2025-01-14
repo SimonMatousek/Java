@@ -17,27 +17,20 @@ public class ReversedOrder {
         // Change the path of the reversed-order.txt source file to the path
         // where you saved it on your computer.
         // You can find the source file in a link next to this exercise.
-        Path filepathOriginal = Paths.get("/home/simon/IdeaProjects/FileIO/originalFiles/reversed-order.txt");
-        Path filepathOutput = Paths.get("/home/simon/IdeaProjects/FileIO/.idea/Files/outputReversed-order.txt");
-        try {
-            List<String> content = Files.readAllLines(filepathOriginal);
-            Files.write(filepathOutput, content);
-        } catch (IOException e) {
-            System.out.println("Could not copy Content");
-        }
-        decryptReversed("src/main/resources/static/reversed-order.txt");
+        Path filePath = Paths.get("/originalFiles/reversed-order.txt");
+        decryptReversed("/originalFiles/reversed-order.txt");
     }
-        public static void decryptReversed (String fileName) {
-            StringBuilder inputChange = new StringBuilder(fileName);
-            List<String> content = new ArrayList<>();
-            try {
-                for (int i = fileName.length() - 1; i > 0; i--) {
-
-                }
-                Files.write(Paths.get(fileName), content.toString().getBytes());
-
-            } catch (IOException e) {
-                System.out.println("failed");
+    public static void decryptReversed(String filename) {
+        try {
+            List<String> content = Files.readAllLines(Paths.get(filename));
+            for (int i = 0; i < content.size() / 2; i++) {
+                String temp = content.get(i);
+                content.set(i, content.get(content.size() - i - 1));
+                content.set(content.size() - i - 1, temp);
             }
+            Files.write(Paths.get("/originalFiles/outputReversedOrder"), content);
+        } catch (Exception e) {
+            System.out.println();
         }
+    }
 }

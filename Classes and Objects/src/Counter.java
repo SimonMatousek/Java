@@ -24,17 +24,26 @@ public class Counter {
 
      */
     int counter;
+    int initCounter;
+    public Counter(int counter) {
+        this.counter = counter;
+        this.initCounter = counter;
+    }
+    public Counter() {}
 
-    public void add(int number) {
+    public int add(int number) {
         this.counter += number;
+        return this.counter;
     }
-    public void add() {
+    public int add() {
         this.counter ++;
+        return this.counter;
     }
-    public void get() {
+    public int get() {
         System.out.println(this.counter);
+        return this.counter;
     }
     public void reset() {
-        this.counter = 0;
+        this.counter = initCounter;
     }
 }

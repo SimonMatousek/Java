@@ -27,10 +27,6 @@ public class SharpieSet {
         return usable;
     }
     public void removeTrash() {
-        for (Sharpie sharpie : this.listOfSharpies) {
-            if (sharpie.inkAmount == 0) {
-               // this.listOfSharpies.remove(sharpie);
-            }
-        }
+        this.listOfSharpies.removeIf(sharpie -> sharpie.inkAmount <= 0);
     }
 }

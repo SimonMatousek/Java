@@ -55,7 +55,6 @@ public class Carrier {
     }
 
     public void fill() {
-
         try {
             for (Aircraft aircraft : listOfAircraft) {
                 if (getAmmo() > 0) {
