@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Abstract and Interface/Abstract and Interface.iml" filepath="$PROJECT_DIR$/Abstract and Interface/Abstract and Interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Arrays and Funkcions/Arrays and Funkcions.iml" filepath="$PROJECT_DIR$/Arrays and Funkcions/Arrays and Funkcions.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BootcampSolutions/BootcampSolutions.iml" filepath="$PROJECT_DIR$/BootcampSolutions/BootcampSolutions.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Classes and Objects/Classes and Objects.iml" filepath="$PROJECT_DIR$/Classes and Objects/Classes and Objects.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Data Structures/Data Structures.iml" filepath="$PROJECT_DIR$/Data Structures/Data Structures.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Drawing and Graphics/Drawing and Graphics.iml" filepath="$PROJECT_DIR$/Drawing and Graphics/Drawing and Graphics.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Expressions and Control Flow/Expressions and Control Flow.iml" filepath="$PROJECT_DIR$/Expressions and Control Flow/Expressions and Control Flow.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FileIO/FileIO.iml" filepath="$PROJECT_DIR$/FileIO/FileIO.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/IdeaProjects.iml" filepath="$PROJECT_DIR$/.idea/IdeaProjects.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Inheritance/Inheritance.iml" filepath="$PROJECT_DIR$/Inheritance/Inheritance.iml" />
+      <module fileurl="file://$PROJECT_DIR$/UnitTesting/UnitTesting.iml" filepath="$PROJECT_DIR$/UnitTesting/UnitTesting.iml" />
+    </modules>
+  </component>
+</project>
